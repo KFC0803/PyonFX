@@ -61,7 +61,7 @@ class Meta:
 
     可以在此获取它们的更多信息: https://aegi.vmoe.info/docs/3.2/Styles/ 。
 
-    Attributes:
+    属性:
         wrap_style (int): 决定字幕行如何换行。
         scaled_border_and_shadow (bool): 确定是否使用脚本分辨率(*True*)或视频分辨率(*False*)来缩放边框和阴影。
         play_res_x (int): 视频宽度。
@@ -86,7 +86,7 @@ class Style:
 
     可以在此获取样式的更多信息: https://aegi.vmoe.info/docs/3.2/ASS_Tags/ 。
 
-    Attributes:
+    属性:
         fontname (str): 字体名
         fontsize (float): 字体大小（点数）
         color1 (str): 主要颜色
@@ -151,11 +151,11 @@ class Char:
 
     一个char可以是karaoke标签 (k, ko, kf) 间的一些文本。
 
-    Attributes:
+    属性:
         i (int): 字符的索引值
         word_i (int): 字符所在的单词的索引值 (e.g.: 在文本 ``Hello PyonFX users!`` 中，字母 "u" 的 word_i=2)。
         syl_i (int): 字符所在的音节的索引值 (e.g.: 在文本 ``{\\k0}Hel{\\k0}lo {\\k0}Pyon{\\k0}FX {\\k0}users!`` 中，字母 "F" 的 syl_i=3)。
-        syl_char_i (int): 字符在所在音节中的索引值 (e.g.: 在文本``{\\k0}Hel{\\k0}lo {\\k0}Pyon{\\k0}FX {\\k0}users!`` 中，"users" 中的字母 "e" 的 syl_char_i=2)。
+        syl_char_i (int): 字符在所在音节中的索引值 (e.g.: 在文本 ``{\\k0}Hel{\\k0}lo {\\k0}Pyon{\\k0}FX {\\k0}users!`` 中，"users" 中的字母 "e" 的 syl_char_i=2)。
         start_time (int): 字符开始时间（毫秒）
         end_time (int): 字符结束时间（毫秒）
         duration (int): 字符持续时间（毫秒）
@@ -209,7 +209,7 @@ class Syllable:
     一个syl可以是karaoke标签 (k, ko, kf) 后的一些文本。
     (e.g.: 在 ``{\\k0}Hel{\\k0}lo {\\k0}Pyon{\\k0}FX {\\k0}users!`` 中，"Pyon" 和 "FX" 是两个不同的音节)，
 
-    Attributes:
+    属性:
         i (int): 音节索引值。
         word_i (int): 音节单词索引值 (e.g.: 在行文本 ``{\\k0}Hel{\\k0}lo {\\k0}Pyon{\\k0}FX {\\k0}users!`` , 音节 "Pyon" 的 word_i=1)。
         start_time (int): 音节开始时间（毫秒）。
@@ -265,7 +265,7 @@ class Word:
     一个word可以是一些文本，在其前后都有一些可选的空格
     (e.g.: 在字符串“What a beautiful world!”中，“beautiful” 和 “world”都是不同的单词)。
 
-    Attributes:
+    属性:
         i (int): 单词索引值。
         start_time (int): 单词开始时间（与行开始时间相同）（毫秒）。
         end_time (int): 单词结束时间（与行结束时间相同）（毫秒）。
@@ -315,7 +315,7 @@ class Line:
     Note:
         (*) = 此项仅在 :class:`extended<Ass>` = True 时有效
 
-    Attributes:
+    属性:
         i (int): 行索引值
         comment (bool): 是否为注释行。如果为 *True* ，这行将不会在屏幕上显示。
         layer (int): 行的层号。层号较高的行将显示在层号较低的行上方。
@@ -392,8 +392,8 @@ class Line:
 
     def copy(self):
         """
-        Returns:
-            A deep copy of this object (line)
+        返回:
+            此对象 (line) 的深度副本
         """
         return copy.deepcopy(self)
 
@@ -405,14 +405,14 @@ class Ass:
     | PyonFX 会自动把输出文件中的所有信息设置为绝对路径，这样无论你
     把生成的文件放在哪里，它都会正确地加载视频和音频。
 
-    Args:
+    参数:
         path_input (str): 输入文件路径 (可以为与 .py 文件的相对路径，也可以是绝对路径)。
         path_output (str): 输出文件路径 (可以为与 .py 文件的相对路径，也可以是绝对路径) (默认: "Output.ass")。
         keep_original (bool): 如果为True，输入文件的所有行将注释后放在生成的新行之前。
         extended (bool): 计算更多来自行的信息(通常用不到)。
         vertical_kanji (bool): 如果为True，对齐方式为 4, 5, 6 的行会被竖直放置。
 
-    Attributes:
+    属性:
         path_input (str): 输入文件绝对路径。
         path_output (str): 输出文件绝对路径。
         meta (:class:`Meta`): 包含给出的 ASS 的信息。
@@ -420,7 +420,7 @@ class Ass:
         lines (list of :class:`Line`): 包含给出的 ASS 的所有行（事件）。
 
     .. _example:
-    Example:
+    实例:
         ..  code-block:: python3
 
             io = Ass("in.ass")
@@ -1156,7 +1156,7 @@ class Ass:
         记得准备好一行后调用它，并且在调用 :func:`save` 
         之前什么也不会做，因为没有写入任何内容。
 
-        Parameters:
+        参数:
             line (:class:`Line`): 一个line对象。如果无效，则抛出 TypeError 异常。
         """
         if isinstance(line, Line):
@@ -1183,7 +1183,7 @@ class Ass:
     def save(self, quiet=False):
         """将私有输出列表中的内容写入文件。
 
-        Parameters:
+        参数:
             quiet (bool): 如果为True，将不会输出任何信息。
         """
 
@@ -1231,7 +1231,7 @@ class Ass:
 
         这是以一种舒适的方式播放输出文件的最快的方法之一。
 
-        Parameters:
+        参数:
             video_path (string): 要播放的视频的绝对路径。如果未指定，将自动使用**meta.video**。
             video_start (string): 视频开始时间 (更多信息，请转到: https://mpv.io/manual/master/#options-start)。如果未指定，将自动使用0.
             full_screen (bool): 如果为True，将全屏播放输出文件。如果未指定，将自动使用False。
