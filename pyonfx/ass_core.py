@@ -57,17 +57,17 @@ def pretty_print(obj, indent=0, name=""):
 
 
 class Meta:
-    """Meta object contains informations about the Ass.
+    """Meta对象包含了Ass的信息。
 
-    More info about each of them can be found on http://docs.aegisub.org/manual/Styles
+    可以在此获取它们的更多信息: https://aegi.vmoe.info/docs/3.2/Styles/ 。
 
     Attributes:
-        wrap_style (int): Determines how line breaking is applied to the subtitle line
-        scaled_border_and_shadow (bool): Determines if it has to be used script resolution (*True*) or video resolution (*False*) to scale border and shadow
-        play_res_x (int): Video Width
-        play_res_y (int): Video Height
-        audio (str): Loaded audio path (absolute)
-        video (str): Loaded video path (absolute)
+        wrap_style (int): 决定字幕行如何换行。
+        scaled_border_and_shadow (bool): 确定是否使用脚本分辨率(*True*)或视频分辨率(*False*)来缩放边框和阴影。
+        play_res_x (int): 视频宽度。
+        play_res_y (int): 视频高度。
+        audio (str): 加载的音频的绝对路径。
+        video (str): 加载的视频的绝对路径。
     """
 
     wrap_style: int
@@ -82,37 +82,37 @@ class Meta:
 
 
 class Style:
-    """Style object contains a set of typographic formatting rules that is applied to dialogue lines.
+    """Style对象包含一组应用于对话行的排版格式规则。
 
-    More info about styles can be found on http://docs.aegisub.org/3.2/ASS_Tags/.
+    可以在此获取样式的更多信息: https://aegi.vmoe.info/docs/3.2/ASS_Tags/ 。
 
     Attributes:
-        fontname (str): Font name
-        fontsize (float): Font size in points
-        color1 (str): Primary color (fill)
-        alpha1 (str): Trasparency of color1
-        color2 (str): Secondary color (secondary fill, for karaoke effect)
-        alpha2 (str): Trasparency of color2
-        color3 (str): Outline (border) color
-        alpha3 (str): Trasparency of color3
-        color4 (str): Shadow color
-        alpha4 (str): Trasparency of color4
-        bold (bool): Font with bold
-        italic (bool): Font with italic
-        underline (bool): Font with underline
-        strikeout (bool): Font with strikeout
-        scale_x (float): Text stretching in the horizontal direction
-        scale_y (float): Text stretching in the vertical direction
-        spacing (float): Horizontal spacing between letters
-        angle (float): Rotation of the text
-        border_style (bool): *True* for opaque box, *False* for standard outline
-        outline (float): Border thickness value
-        shadow (float): How far downwards and to the right a shadow is drawn
-        alignment (int): Alignment of the text
-        margin_l (int): Distance from the left of the video frame
-        margin_r (int): Distance from the right of the video frame
-        margin_v (int): Distance from the bottom (or top if alignment >= 7) of the video frame
-        encoding (int): Codepage used to map codepoints to glyphs
+        fontname (str): 字体名
+        fontsize (float): 字体大小（点数）
+        color1 (str): 主要颜色
+        alpha1 (str): 主要颜色的透明度
+        color2 (str): 次要颜色（用于kalaoke效果）
+        alpha2 (str): 次要颜色的透明度
+        color3 (str): 边框颜色
+        alpha3 (str): 边框颜色的透明度
+        color4 (str): 阴影颜色
+        alpha4 (str): 阴影颜色的透明度
+        bold (bool): 字体是否加粗
+        italic (bool): 字体是否为斜体
+        underline (bool): 字体是否有下划线
+        strikeout (bool): 字体是否有删除线
+        scale_x (float): 文本水平缩放
+        scale_y (float): 文本垂直缩放
+        spacing (float): 字间距
+        angle (float): 旋转角度
+        border_style (bool): 是否是不透明背景
+        outline (float): 边框厚度
+        shadow (float): 阴影距离
+        alignment (int): 对齐方式
+        margin_l (int): 左边框距离
+        margin_r (int): 右边框距离
+        margin_v (int): 垂直边框距离
+        encoding (int): 字符编码
     """
 
     fontname: str
@@ -147,38 +147,38 @@ class Style:
 
 
 class Char:
-    """Char object contains informations about a single char of a line in the Ass.
+    """Char对象包含了Ass中一行的单个字符的信息。
 
-    A char is defined by some text between two karaoke tags (k, ko, kf).
+    一个char可以是karaoke标签 (k, ko, kf) 间的一些文本。
 
     Attributes:
-        i (int): Char index number
-        word_i (int): Char word index (e.g.: In line text ``Hello PyonFX users!``, letter "u" will have word_i=2).
-        syl_i (int): Char syl index (e.g.: In line text ``{\\k0}Hel{\\k0}lo {\\k0}Pyon{\\k0}FX {\\k0}users!``, letter "F" will have syl_i=3).
-        syl_char_i (int): Char invidual syl index (e.g.: In line text ``{\\k0}Hel{\\k0}lo {\\k0}Pyon{\\k0}FX {\\k0}users!``, letter "e" of "users" will have syl_char_i=2).
-        start_time (int): Char start time (in milliseconds).
-        end_time (int): Char end time (in milliseconds).
-        duration (int): Char duration (in milliseconds).
-        styleref (obj): Reference to the Style object of this object original line.
-        text (str): Char text.
-        inline_fx (str): Char inline effect (marked as \\-EFFECT in karaoke-time).
-        prespace (int): Char free space before text.
-        postspace (int): Char free space after text.
-        width (float): Char text width.
-        height (float): Char text height.
-        x (float): Char text position horizontal (depends on alignment).
-        y (float): Char text position vertical (depends on alignment).
-        left (float): Char text position left.
-        center (float): Char text position center.
-        right (float): Char text position right.
-        top (float): Char text position top.
-        middle (float): Char text position middle.
-        bottom (float): Char text position bottom.
+        i (int): 字符的索引值
+        word_i (int): 字符所在的单词的索引值 (e.g.: 在文本 ``Hello PyonFX users!``中，字母 "u" 的 word_i=2).
+        syl_i (int): 字符所在的音节的索引值 (e.g.: 在文本 ``{\\k0}Hel{\\k0}lo {\\k0}Pyon{\\k0}FX {\\k0}users!``中，字母 "F" 的 syl_i=3).
+        syl_char_i (int): 字符在所在音节中的索引值 (e.g.: In line text ``{\\k0}Hel{\\k0}lo {\\k0}Pyon{\\k0}FX {\\k0}users!``, letter "e" of "users" will have syl_char_i=2).
+        start_time (int): 字符开始时间（毫秒）
+        end_time (int): 字符结束时间（毫秒）
+        duration (int): 字符持续时间（毫秒）
+        styleref (obj): 此对象原始行的Style对象的引用。
+        text (str): 字符文本。
+        inline_fx (str): 字符内联特效 (在K值后使用 \\-特效名)。
+        prespace (int): 文本之前的字符空白空间。
+        postspace (int): 文本之后的字符空白空间。
+        width (float): 字符文本宽度。
+        height (float): 字符文本高度。
+        x (float): 字符水平坐标（取决于对齐方式）。
+        y (float): 字符垂直坐标（取决于对齐方式）。
+        left (float): 字符左侧横坐标。
+        center (float): 字符中心横坐标。
+        right (float): 字符右侧横坐标。
+        top (float): 字符顶部纵坐标。
+        middle (float): 字符中心纵坐标。
+        bottom (float): 字符底部纵坐标。
     """
 
     i: int
     word_i: int
-    syl_i: int
+    syl_i: intdede
     syl_char_i: int
     start_time: int
     end_time: int
@@ -204,33 +204,33 @@ class Char:
 
 
 class Syllable:
-    """Syllable object contains informations about a single syl of a line in the Ass.
+    """Syllable对象包含了Ass中一行的单个音节的信息。
 
-    A syl can be defined as some text after a karaoke tag (k, ko, kf)
-    (e.g.: In ``{\\k0}Hel{\\k0}lo {\\k0}Pyon{\\k0}FX {\\k0}users!``, "Pyon" and "FX" are distinct syllables),
+    一个syl可以是karaoke标签 (k, ko, kf) 后的一些文本。
+    (e.g.: 在 ``{\\k0}Hel{\\k0}lo {\\k0}Pyon{\\k0}FX {\\k0}users!``中，"Pyon" 和 "FX" 是两个不同的音节)，
 
     Attributes:
-        i (int): Syllable index number
-        word_i (int): Syllable word index (e.g.: In line text ``{\\k0}Hel{\\k0}lo {\\k0}Pyon{\\k0}FX {\\k0}users!``, syl "Pyon" will have word_i=1).
-        start_time (int): Syllable start time (in milliseconds).
-        end_time (int): Syllable end time (in milliseconds).
-        duration (int): Syllable duration (in milliseconds).
-        styleref (obj): Reference to the Style object of this object original line.
-        text (str): Syllable text.
-        tags (str): All the remaining tags before syl text apart \\k ones.
-        inline_fx (str): Syllable inline effect (marked as \\-EFFECT in karaoke-time).
-        prespace (int): Syllable free space before text.
-        postspace (int): Syllable free space after text.
-        width (float): Syllable text width.
-        height (float): Syllable text height.
-        x (float): Syllable text position horizontal (depends on alignment).
-        y (float): Syllable text position vertical (depends on alignment).
-        left (float): Syllable text position left.
-        center (float): Syllable text position center.
-        right (float): Syllable text position right.
-        top (float): Syllable text position top.
-        middle (float): Syllable text position middle.
-        bottom (float): Syllable text position bottom.
+        i (int): 音节索引值。
+        word_i (int): 音节单词索引值 (e.g.: 在行文本 ``{\\k0}Hel{\\k0}lo {\\k0}Pyon{\\k0}FX {\\k0}users!``, 音节 "Pyon" 的 word_i=1)。
+        start_time (int): 音节开始时间（毫秒）。
+        end_time (int): 音节结束时间（毫秒）。
+        duration (int): 音节持续时间（毫秒）。
+        styleref (obj): 此对象原始行的Style对象的引用。
+        text (str): 音节文本。
+        tags (str): 除\\k之外音节前面的所有标签。
+        inline_fx (str): 音节内联特效 (在K值后使用 \\-特效名)。
+        prespace (int): 文本之前的音节空白空间。
+        postspace (int): 文本之后的音节空白空间。
+        width (float): 音节文本宽度。
+        height (float): 音节文本高度。
+        x (float): 音节水平坐标（取决于对齐方式）。
+        y (float): 音节垂直坐标（取决于对齐方式）。
+        left (float): 音节左侧横坐标。
+        center (float): 音节中心横坐标。
+        right (float): 音节右侧横坐标。
+        top (float): 音节顶部纵坐标。
+        middle (float): 音节中心纵坐标。
+        bottom (float): 音节底部纵坐标。
     """
 
     i: int
@@ -260,30 +260,30 @@ class Syllable:
 
 
 class Word:
-    """Word object contains informations about a single word of a line in the Ass.
+    """Word对象包含了Ass中一行的单个单词的信息。
 
-    A word can be defined as some text with some optional space before or after
-    (e.g.: In the string "What a beautiful world!", "beautiful" and "world" are both distinct words).
+    一个word可以是一些文本，在其前后都有一些可选的空格
+    (e.g.: 在字符串“What a beautiful world!”中，“beautiful” 和 “world”都是不同的单词)。
 
     Attributes:
-        i (int): Word index number
-        start_time (int): Word start time (same as line start time) (in milliseconds).
-        end_time (int): Word end time (same as line end time) (in milliseconds).
-        duration (int): Word duration (same as line duration) (in milliseconds).
-        styleref (obj): Reference to the Style object of this object original line.
-        text (str): Word text.
-        prespace (int): Word free space before text.
-        postspace (int): Word free space after text.
-        width (float): Word text width.
-        height (float): Word text height.
-        x (float): Word text position horizontal (depends on alignment).
-        y (float): Word text position vertical (depends on alignment).
-        left (float): Word text position left.
-        center (float): Word text position center.
-        right (float): Word text position right.
-        top (float): Word text position top.
-        middle (float): Word text position middle.
-        bottom (float): Word text position bottom.
+        i (int): 单词索引值。
+        start_time (int): 单词开始时间（与行开始时间相同）（毫秒）。
+        end_time (int): 单词结束时间（与行结束时间相同）（毫秒）。
+        duration (int): 单词持续时间（与行持续时间相同）（毫秒）。
+        styleref (obj): 此对象原始行的Style对象的引用。
+        text (str): 单词文本。
+        prespace (int): 文本之前的字空白空间。
+        postspace (int): 文本之后的字空白空间。
+        width (float): 单词文本宽度。
+        height (float): 单词文本高度。
+        x (float): 单词水平坐标（取决于对齐方式）。
+        y (float): 单词垂直坐标（取决于对齐方式）。
+        left (float): 单词左横坐标。
+        center (float): 单词中心横坐标。
+        right (float): 单词右横坐标。
+        top (float): 单词上部纵坐标。
+        middle (float): 单词中心纵坐标。
+        bottom (float): 单词底部纵坐标。
     """
 
     i: int
@@ -310,46 +310,46 @@ class Word:
 
 
 class Line:
-    """Line object contains informations about a single line in the Ass.
+    """Line对象包括了Ass中每一行的信息。
 
     Note:
-        (*) = This field is available only if :class:`extended<Ass>` = True
+        (*) = 此项仅在 class:`extended<Ass>` = True 时有效
 
     Attributes:
-        i (int): Line index number
-        comment (bool): If *True*, this line will not be displayed on the screen.
-        layer (int): Layer for the line. Higher layer numbers are drawn on top of lower ones.
-        start_time (int): Line start time (in milliseconds).
-        end_time (int): Line end time (in milliseconds).
-        duration (int): Line duration (in milliseconds) (*).
-        leadin (float): Time between this line and the previous one (in milliseconds; first line = 1000.1) (*).
-        leadout (float): Time between this line and the next one (in milliseconds; first line = 1000.1) (*).
-        style (str): Style name used for this line.
-        styleref (obj): Reference to the Style object of this line (*).
-        actor (str): Actor field.
-        margin_l (int): Left margin for this line.
-        margin_r (int): Right margin for this line.
-        margin_v (int): Vertical margin for this line.
-        effect (str): Effect field.
-        raw_text (str): Line raw text.
-        text (str): Line stripped text (no tags).
-        width (float): Line text width (*).
-        height (float): Line text height (*).
-        ascent (float): Line font ascent (*).
-        descent (float): Line font descent (*).
+        i (int): 行索引值
+        comment (bool): 是否为注释行。如果为 *True* ，这行将不会在屏幕上显示。
+        layer (int): 行的层号。层号较高的行将显示在层号较低的行上方。
+        start_time (int): 行开始时间（毫秒）。
+        end_time (int): 行结束时间（毫秒）。
+        duration (int): 行持续时间（毫秒） (*)。
+        leadin (float): 行前时间（毫秒，首行为 1000.1） (*)。
+        leadout (float): 行后时间（毫秒，首行为 1000.1） (*)。
+        style (str): 此行使用的样式名称。
+        styleref (obj): 此行的Style对象的引用 (*)。
+        actor (str): 说话人。
+        margin_l (int): 该行的左边距。
+        margin_r (int): 该行的右边距。
+        margin_v (int): 该行的垂直边距。
+        effect (str): 特效。
+        raw_text (str): 该行的原始文本。
+        text (str): 该行的文本（无标签）。
+        width (float): 行文本宽度 (*)。
+        height (float): 行文本高度 (*)。
+        ascent (float): 行上方距离 (*)。
+        descent (float): 行下方距离 (*)。
         internal_leading (float): Line font internal lead (*).
         external_leading (float): Line font external lead (*).
-        x (float): Line text position horizontal (depends on alignment) (*).
-        y (float): Line text position vertical (depends on alignment) (*).
-        left (float): Line text position left (*).
-        center (float): Line text position center (*).
-        right (float): Line text position right (*).
-        top (float): Line text position top (*).
-        middle (float): Line text position middle (*).
-        bottom (float): Line text position bottom (*).
-        words (list): List containing objects :class:`Word` in this line (*).
-        syls (list): List containing objects :class:`Syllable` in this line (if available) (*).
-        chars (list): List containing objects :class:`Char` in this line (*).
+        x (float): 行水平坐标（取决于对齐方式）(*)。
+        y (float): 行垂直坐标（取决于对齐方式）(*)。
+        left (float): 行左侧横坐标 (*)。
+        center (float): 行中心横坐标 (*)。
+        right (float): 行右侧横坐标 (*)。
+        top (float): 行顶部纵坐标 (*)。
+        middle (float): 行中心纵坐标 (*)。
+        bottom (float): 行底部纵坐标 (*)。
+        words (list): 包含此行内 :class:`Word` 对象的列表 (*)。
+        syls (list): 包含此行内 :class:`Syllable` 对象的列表(如果有) (*)。
+        chars (list): 包含此行内 :class:`Char` 对象的列表 (*)。
     """
 
     i: int
@@ -399,25 +399,25 @@ class Line:
 
 
 class Ass:
-    """Contains all the informations about a file in the ASS format and the methods to work with it for both input and output.
+    """包含关于 ASS 格式文件的所有信息，以及用于输入和输出的方法。
 
-    | Usually you will create an Ass object and use it for input and output (see example_ section).
-    | PyonFX set automatically an absolute path for all the info in the output, so that wherever you will
-      put your generated file, it should always load correctly video and audio.
+    | 通常，您将创建一个 Ass 对象，并将其用于输入和输出(参见 example _ section)。
+    | PyonFX 会自动把输出文件中的所有信息设置为绝对路径，这样无论你
+    把生成的文件放在哪里，它都会正确地加载视频和音频。
 
     Args:
-        path_input (str): Path for the input file (either relative to your .py file or absolute).
-        path_output (str): Path for the output file (either relative to your .py file or absolute) (DEFAULT: "Output.ass").
-        keep_original (bool): If True, you will find all the lines of the input file commented before the new lines generated.
-        extended (bool): Calculate more informations from lines (usually you will not have to touch this).
-        vertical_kanji (bool): If True, line text with alignment 4, 5 or 6 will be positioned vertically.
+        path_input (str): 输入文件路径 (可以为与 .py 文件的相对路径，也可以是绝对路径)。
+        path_output (str): 输出文件路径 (可以为与 .py 文件的相对路径，也可以是绝对路径) (默认: "Output.ass")。
+        keep_original (bool): 如果为True，输入文件的所有行将注释后放在生成的新行之前。
+        extended (bool): 计算更多来自行的信息(通常用不到)。
+        vertical_kanji (bool): 如果为True，对齐方式为 4, 5, 6 的行会被竖直放置。
 
     Attributes:
-        path_input (str): Path for input file (absolute).
-        path_output (str): Path for output file (absolute).
-        meta (:class:`Meta`): Contains informations about the ASS given.
-        styles (list of :class:`Style`): Contains all the styles in the ASS given.
-        lines (list of :class:`Line`): Contains all the lines (events) in the ASS given.
+        path_input (str): 输入文件绝对路径。
+        path_output (str): 输出文件绝对路径。
+        meta (:class:`Meta`): 包含给出的 ASS 的信息。
+        styles (list of :class:`Style`): 包含给出的 ASS 的所有样式。
+        lines (list of :class:`Line`): 包含给出的 ASS 的所有行（事件）。
 
     .. _example:
     Example:
@@ -1143,7 +1143,7 @@ class Ass:
                 )
 
     def get_data(self):
-        """Utility function to retrieve easily meta styles and lines.
+        """实用功能，可轻松检索元样式和行。
 
         Returns:
             :attr:`meta`, :attr:`styles` and :attr:`lines`
@@ -1151,13 +1151,13 @@ class Ass:
         return self.meta, self.styles, self.lines
 
     def write_line(self, line):
-        """Appends a line to the output list (which is private) that later on will be written to the output file when calling save().
+        """在输出列表上追加一行 (私有)，调用 save() 时会被写入输出文件。
 
-        Use it whenever you've prepared a line, it will not impact performance since you
-        will not actually write anything until :func:`save` will be called.
+        记得准备好一行后调用它，并且在调用 :func:`save` 
+        之前什么也不会做，因为没有写入任何内容。
 
         Parameters:
-            line (:class:`Line`): A line object. If not valid, TypeError is raised.
+            line (:class:`Line`): 一个line对象。如果无效，则抛出 TypeError 异常。
         """
         if isinstance(line, Line):
             self.__output.append(
@@ -1181,10 +1181,10 @@ class Ass:
             raise TypeError("Expected Line object, got %s." % type(line))
 
     def save(self, quiet=False):
-        """Write everything inside the private output list to a file.
+        """将私有输出列表中的内容写入文件。
 
         Parameters:
-            quiet (bool): If True, you will not get printed any message.
+            quiet (bool): 如果为True，将不会输出任何信息。
         """
 
         # Writing to file
@@ -1199,12 +1199,12 @@ class Ass:
             )
 
     def open_aegisub(self):
-        """Open the output (specified in self.path_output) with Aegisub.
+        """用Aegisub打开输出文件 (在 self.path_output 中指定)。
 
-        This can be usefull if you don't have MPV installed or you want to look at your output in detailed.
+        如果您未安装MPV或想要详细查看输出文件，这很有用。
 
         Returns:
-            0 if success, -1 if the output couldn't be opened.
+            成功返回0，如果输出文件无法打开则返回-1。
         """
 
         # Check if it was saved
@@ -1226,14 +1226,14 @@ class Ass:
         return 0
 
     def open_mpv(self, video_path="", video_start="", full_screen=False):
-        """Open the output (specified in self.path_output) in softsub with the MPV player.
-        To utilize this function, MPV player is required. Additionally if you're on Windows, MPV must be in the PATH (check https://pyonfx.readthedocs.io/en/latest/quick%20start.html#installation-extra-step).
+        """用MPV播放器以软字幕打开输出文件 (在 self.path_output 中指定)。
+        要使用这个函数，需要安装MPV。并且如果您使用的是Windows的话，需要添加MPV到PATH中 (转到 https://pyonfx.readthedocs.io/en/latest/quick%20start.html#installation-extra-step).
 
-        This is one of the fastest way to reproduce your output in a comfortable way.
+        这是以一种舒适的方式播放输出文件的最快的方法之一。
 
         Parameters:
-            video_path (string): The video file path (absolute) to reproduce. If not specified, **meta.video** is automatically taken.
-            video_start (string): The start time for the video (more info: https://mpv.io/manual/master/#options-start). If not specified, 0 is automatically taken.
+            video_path (string): 要播放的视频的绝对路径。如果未指定，将自动使用**meta.video**。
+            video_start (string): 视频开始时间 (更多信息，请转到: https://mpv.io/manual/master/#options-start)。如果未指定，将自动使用0.
             full_screen (bool): If True, it will reproduce the output in full screen. If not specified, False is automatically taken.
         """
 
