@@ -178,7 +178,7 @@ class Char:
 
     i: int
     word_i: int
-    syl_i: intdede
+    syl_i: int
     syl_char_i: int
     start_time: int
     end_time: int
