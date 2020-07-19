@@ -153,9 +153,9 @@ class Char:
 
     Attributes:
         i (int): 字符的索引值
-        word_i (int): 字符所在的单词的索引值 (e.g.: 在文本 ``Hello PyonFX users!``中，字母 "u" 的 word_i=2).
-        syl_i (int): 字符所在的音节的索引值 (e.g.: 在文本 ``{\\k0}Hel{\\k0}lo {\\k0}Pyon{\\k0}FX {\\k0}users!``中，字母 "F" 的 syl_i=3).
-        syl_char_i (int): 字符在所在音节中的索引值 (e.g.: In line text ``{\\k0}Hel{\\k0}lo {\\k0}Pyon{\\k0}FX {\\k0}users!``, letter "e" of "users" will have syl_char_i=2).
+        word_i (int): 字符所在的单词的索引值 (e.g.: 在文本 ``Hello PyonFX users!`` 中，字母 "u" 的 word_i=2)。
+        syl_i (int): 字符所在的音节的索引值 (e.g.: 在文本 ``{\\k0}Hel{\\k0}lo {\\k0}Pyon{\\k0}FX {\\k0}users!`` 中，字母 "F" 的 syl_i=3)。
+        syl_char_i (int): 字符在所在音节中的索引值 (e.g.: 在文本``{\\k0}Hel{\\k0}lo {\\k0}Pyon{\\k0}FX {\\k0}users!`` 中，"users" 中的字母 "e" 的 syl_char_i=2)。
         start_time (int): 字符开始时间（毫秒）
         end_time (int): 字符结束时间（毫秒）
         duration (int): 字符持续时间（毫秒）
@@ -207,11 +207,11 @@ class Syllable:
     """Syllable对象包含了Ass中一行的单个音节的信息。
 
     一个syl可以是karaoke标签 (k, ko, kf) 后的一些文本。
-    (e.g.: 在 ``{\\k0}Hel{\\k0}lo {\\k0}Pyon{\\k0}FX {\\k0}users!``中，"Pyon" 和 "FX" 是两个不同的音节)，
+    (e.g.: 在 ``{\\k0}Hel{\\k0}lo {\\k0}Pyon{\\k0}FX {\\k0}users!`` 中，"Pyon" 和 "FX" 是两个不同的音节)，
 
     Attributes:
         i (int): 音节索引值。
-        word_i (int): 音节单词索引值 (e.g.: 在行文本 ``{\\k0}Hel{\\k0}lo {\\k0}Pyon{\\k0}FX {\\k0}users!``, 音节 "Pyon" 的 word_i=1)。
+        word_i (int): 音节单词索引值 (e.g.: 在行文本 ``{\\k0}Hel{\\k0}lo {\\k0}Pyon{\\k0}FX {\\k0}users!`` , 音节 "Pyon" 的 word_i=1)。
         start_time (int): 音节开始时间（毫秒）。
         end_time (int): 音节结束时间（毫秒）。
         duration (int): 音节持续时间（毫秒）。
@@ -313,7 +313,7 @@ class Line:
     """Line对象包括了Ass中每一行的信息。
 
     Note:
-        (*) = 此项仅在 class:`extended<Ass>` = True 时有效
+        (*) = 此项仅在 :class:`extended<Ass>` = True 时有效
 
     Attributes:
         i (int): 行索引值
@@ -1234,7 +1234,7 @@ class Ass:
         Parameters:
             video_path (string): 要播放的视频的绝对路径。如果未指定，将自动使用**meta.video**。
             video_start (string): 视频开始时间 (更多信息，请转到: https://mpv.io/manual/master/#options-start)。如果未指定，将自动使用0.
-            full_screen (bool): If True, it will reproduce the output in full screen. If not specified, False is automatically taken.
+            full_screen (bool): 如果为True，将全屏播放输出文件。如果未指定，将自动使用False。
         """
 
         # Check if it was saved
