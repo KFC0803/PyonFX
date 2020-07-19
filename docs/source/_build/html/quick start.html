@@ -1,0 +1,321 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>快速入门指南 &mdash; PyonFX 0.9.2 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="PyonFX库参考" href="reference/index.html" />
+    <link rel="prev" title="PyonFX Library中文文档" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/PyonFX Logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">快速入门指南</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#windows">Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ubuntu-debian">Ubuntu/Debian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fedora">Fedora</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#arch-linux">Arch Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#opensuse">openSUSE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#macos">macOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id9">安装 - 额外步骤</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">开始</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tips">Tips</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reference/index.html">PyonFX库参考</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PyonFX</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>快速入门指南</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/quick start.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="quick-start">
+<span id="id1"></span><h1>快速入门指南<a class="headerlink" href="#quick-start" title="Permalink to this headline">¶</a></h1>
+<p>首先，您需要知道您要如何进行创作。您需要了解（如果您还不知道的话）如下内容：</p>
+<ul class="simple">
+<li><p><strong>ASS格式</strong> Pyonfx仍然是一个高级的排版工具和卡拉OK特效（karaokers）工具，它应该被经验丰富的用户（typesetters）使用，他们知道Libass所提供的所有标签。检查脚注以获得所有标签的完整列表。</p></li>
+<li><p><strong>Python3 语言</strong> 像Python这样的编程语言可以让您定义在某种情况下您想要什么、多久一次、应用于这个或那个……总得来说能使您更自由。在一个完全图形化的界面中，您将不局限于只有几个命令的按钮、滑块或文本字段。<strong>基本上就是这样</strong>。变量、函数、条件、循环、比较、字符串格式化、列表和字典……您可以在脚注中找到一些优秀教程的链接。 <a class="footnote-reference brackets" href="#f2" id="id2">2</a></p></li>
+</ul>
+<p>要开始生成，您只需像以前那样在Python 3中编写脚本，它包含您的KFX或高级排版创作的一切。</p>
+<p>如果您还不会安装Python，您可以从网上找点教程，比如 <a class="reference external" href="https://www.liaoxuefeng.com/wiki/1016959663602400/1016959856222624">https://www.liaoxuefeng.com/wiki/1016959663602400/1016959856222624</a>。</p>
+<div class="section" id="windows">
+<h2>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
+<p>总之，如果您还没 <strong>安装Python3</strong> ，
+您可以从 <a class="reference external" href="https://www.python.org/downloads/">官网</a> 上 <strong>下载</strong> 。
+请确保勾选“Add Python 3.x to PATH”复选框。这使得您不需要进行额外操作来使Python可以在命令行中被调用。</p>
+<p>运行如下命令，该命令将使用 pip 安装并最终更新库：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="hll">pip install --upgrade https://github.com/CoffeeStraw/PyonFX/zipball/master
+</span></pre></div>
+</div>
+<p>好了。一切准备就绪，当您需要更新时，就再运行一次上面的命令。</p>
+</div>
+<div class="section" id="ubuntu-debian">
+<h2>Ubuntu/Debian<a class="headerlink" href="#ubuntu-debian" title="Permalink to this headline">¶</a></h2>
+<p>警告：下面的第一个命令还未完全测试。如果您遇到任何问题，请创建一个issue或参考 <a class="reference external" href="https://pygobject.readthedocs.io/en/latest/getting_started.html">官方的安装指南</a> 。</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="hll">sudo apt install python3 python3-pip libgirepository1.0-dev gcc libcairo2-dev pkg-config python3-dev gir1.2-gtk-3.0 python3-gi python3-gi-cairo
+</span><span class="hll">python3 -m pip install --upgrade https://github.com/CoffeeStraw/PyonFX/zipball/master
+</span></pre></div>
+</div>
+</div>
+<div class="section" id="fedora">
+<h2>Fedora<a class="headerlink" href="#fedora" title="Permalink to this headline">¶</a></h2>
+<p>警告：下面的第一个命令还未完全测试。如果您遇到任何问题，请创建一个issue或参考 <a class="reference external" href="https://pygobject.readthedocs.io/en/latest/getting_started.html">官方的安装指南</a> 。</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="hll">sudo dnf install python3 python3-pip gcc gobject-introspection-devel cairo-devel pkg-config python3-devel python3-gobject gtk3
+</span><span class="hll">python3 -m pip install --upgrade https://github.com/CoffeeStraw/PyonFX/zipball/master
+</span></pre></div>
+</div>
+</div>
+<div class="section" id="arch-linux">
+<h2>Arch Linux<a class="headerlink" href="#arch-linux" title="Permalink to this headline">¶</a></h2>
+<p>警告：下面的第一个命令还未完全测试。如果您遇到任何问题，请创建一个issue或参考 <a class="reference external" href="https://pygobject.readthedocs.io/en/latest/getting_started.html">官方的安装指南</a> 。</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="hll">sudo pacman -S python python-pip cairo pkgconf gobject-introspection python-gobject gtk3
+</span><span class="hll">python3 -m pip install --upgrade https://github.com/CoffeeStraw/PyonFX/zipball/master
+</span></pre></div>
+</div>
+</div>
+<div class="section" id="opensuse">
+<h2>openSUSE<a class="headerlink" href="#opensuse" title="Permalink to this headline">¶</a></h2>
+<p>警告：下面的第一个命令还未完全测试。如果您遇到任何问题，请创建一个issue或参考 <a class="reference external" href="https://pygobject.readthedocs.io/en/latest/getting_started.html">官方的安装指南</a> 。</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="hll">sudo zypper install python3 python3-pip cairo-devel pkg-config python3-devel gcc gobject-introspection-devel python3-gobject python3-gobject-Gdk typelib-1_0-Gtk-3_0 libgtk-3-0
+</span><span class="hll">python3 -m pip install --upgrade https://github.com/CoffeeStraw/PyonFX/zipball/master
+</span></pre></div>
+</div>
+</div>
+<div class="section" id="macos">
+<h2>macOS<a class="headerlink" href="#macos" title="Permalink to this headline">¶</a></h2>
+<p>您可能需要先安装 <a class="reference external" href="https://brew.sh/">Homebrew</a> 。</p>
+<p>警告：下面的第一个命令还未完全测试。如果您遇到任何问题，请创建一个issue或参考 <a class="reference external" href="https://pygobject.readthedocs.io/en/latest/getting_started.html">官方的安装指南</a> 。</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="hll">brew install pygobject3 gtk+3 cairo py3cairo pkg-config
+</span><span class="hll">python3 -m pip install --upgrade https://github.com/CoffeeStraw/PyonFX/zipball/master
+</span></pre></div>
+</div>
+<p>警告：如果输出没有正确渲染，可能需要将 PangoCairo 后端更改为 fontconfig。</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="nv">PANGOCAIRO_BACKEND</span><span class="o">=</span><span class="nb">fc</span> python3 namefile.py
+</span></pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>安装 - 额外步骤<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<p>跳过这一步并不影响此库的正常使用。但就我个人而言，我认为Aegisub太老/太臃肿了，我需要一种更舒适的工作方式。</p>
+<p>这就是为什么PyonFX集成了一种额外的方式，您可以更快地在修改软字幕之后使用 <a class="reference external" href="https://mpv.io/">MPV播放器</a> 。预览您的作品。如果您 <em>不</em> 使用Windows，安装完就可以了。</p>
+<p>如果您正使用Windows，安装后（去网站上找），您需要把它添加到 PATH 中，这样库就可以使用它了。您可以在 <a class="reference external" href="https://jingyan.baidu.com/article/8ebacdf02d3c2949f65cd5d0.html">这里</a> 找到一些指导。</p>
+<p>您需要添加包含mpv的.exe的文件夹到PATH中，通常是C:\Program Files\mpv。</p>
+</div>
+<div class="section" id="id11">
+<h2>开始<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<p>您可能想检查一下现在一切是否正常。为此，我建议您尝试运行一些在 <a class="reference external" href="https://github.com/CoffeeStraw/PyonFX/tree/master/examples">项目github官方仓库</a> 中的示例。</p>
+<p>要在Python中运行脚本，只需运行以下命令：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="hll">python namefile.py
+</span></pre></div>
+</div>
+<p>或者，如果由于某种原因（例如您不使用Windows，或者同时装了Python2及Python3）而无法运行:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="hll">python3 namefile.py
+</span></pre></div>
+</div>
+<p>我强烈建议您生成并研究examples文件夹中的每个示例（从 <a class="reference external" href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/CoffeeStraw/PyonFX/tree/master/examples">‘这里’</a> 下载最新的）。这些都是为零基础初学者进阶为高级用户准备的，并详细解释了库中所有相关函数的用法。</p>
+</div>
+<div class="section" id="tips">
+<h2>Tips<a class="headerlink" href="#tips" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>不要一口气做一个KFX。休息一下，散散步，从周围环境中寻求灵感；</p></li>
+<li><p>选择视频元素。您的效果应以某种方式与背景契合；</p></li>
+<li><p>考虑人类的认知。我们主要关注运动，其次是对比度，然后是颜色。效果太多会让人头疼，少了又很无趣；</p></li>
+<li><p>使用现代风格来升华（光，曲线，粒子，渐变），用传统风格来增强可读性（纯色，粗边框，静态位置）；</p></li>
+<li><p>如果背景太华丽，请尝试插入面板形状 <em>(panel shape)</em> ，以将文本置于“安全地带”中；</p></li>
+<li><p>适应卡拉OK时间和歌声。快歌没有音节持续时间，不适合使用需要一些时间才能看到的效果。</p></li>
+</ul>
+<hr class="docutils" />
+<p class="rubric">Footnotes</p>
+<dl class="footnote brackets">
+<dt class="label" id="f1"><span class="brackets">1</span></dt>
+<dd><p>ASS标签大全：<a class="reference external" href="https://aegi.vmoe.info/docs/3.2/ASS_Tags/">https://aegi.vmoe.info/docs/3.2/ASS_Tags/</a></p>
+</dd>
+<dt class="label" id="f2"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>推荐的Python3 教程：<a class="reference external" href="https://www.liaoxuefeng.com/wiki/1016959663602400">https://www.liaoxuefeng.com/wiki/1016959663602400</a></p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="reference/index.html" class="btn btn-neutral float-right" title="PyonFX库参考" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="PyonFX Library中文文档" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Antonio Strippoli
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
